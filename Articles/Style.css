@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #001;
+}
+header{
+    background-color: black;
+    padding: 1px 0;
+    margin: 0 15vw;
+}
+header h1{
+    font-family:STLiti;
+    font-size: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:20px;
+    letter-spacing: 2px;
+}
+header ul{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+header li{
+    font-size: 24px;
+    color: black;
+    display: inline-block;
+    text-align: centers;
+    margin:12px 50px;
+    font-family: Agency FB;
+}
+header a{
+    color: rgb(100, 230, 255);
+    text-decoration: none;
+}
+.sec{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section{
+    width: 600px;
+    background-color: black;
+    align-items: center;
+    padding: 15px 20px;
+}
+section h1{
+    color: rgb(100, 230, 255);
+    font-size: 30px;
+    line-height: 70px;
+    font-family: GungsuhChe;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+section h2{
+    color: white;
+    line-height: 40px;
+    margin-left: 1vw;
+}
+section h3{
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
+    margin-left: 1vw;
+    font-family: Comic Sans MS;
+}
+section p{
+    font-family:Calibri, 標楷體;
+    color: white;
+    font-size: 20px;
+    line-height: 30px;
+    margin-left: 2vw;
+    letter-spacing: 1px;
+}
+section ul{
+    list-style: none;
+    margin: 0 20px;
+}
+section li{
+    color: white;
+    font-family:Calibri, 標楷體 , bold;
+    font-size: 20px;
+    padding: 10px;
+}
+footer{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    margin: 0 15vw;
+}
+footer h1{
+    font-family: Arial;
+    font-size: 10px;
+    color: white;
+}

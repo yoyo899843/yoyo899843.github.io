@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #001;
+}
+header{
+    background-color: black;
+    padding: 1px 0;
+    margin: 0 15vw;
+}
+header h1{
+    font-family:STLiti;
+    font-size: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:20px;
+    letter-spacing: 2px;
+}
+header ul{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+header li{
+    font-size: 24px;
+    color: black;
+    display: inline-block;
+    text-align: centers;
+    margin:12px 50px;
+    font-family: Agency FB;
+}
+a{
+    color: rgb(100, 230, 255);
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+    color: rgb(100, 230, 255);
+}
+.sec{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.head{
+    display: flex;
+}
+.main{
+    margin: 10px;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    width: 320px
+}
+.main caption{
+    caption-side: bottom;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(100, 230, 255);
+}
+.main thead{
+    align-items: center;
+}
+.main th,td{
+    padding: 1px;
+    font-size: 20px;
+    font-family: 標楷體;
+}
+.main th{
+    padding-right: 10px;
+    color: rgb(100, 230, 255);
+}
+section img{
+    margin: 10px;
+    width: 250px;
+    border-radius: 20px
+}
+section{
+    width: 600px;
+    background-color: black;
+    align-items: center;
+    padding: 15px 20px;
+}
+section h1{
+    color: rgb(100, 230, 255);
+    font-size: 30px;
+    line-height: 70px;
+    font-family: GungsuhChe;
+    letter-spacing: 2px;
+}
+section h2{
+    color: white;
+    line-height: 40px;
+    margin-left: 1vw;
+}
+section h3{
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
+    margin-left: 1vw;
+    font-family: Comic Sans MS;
+}
+.category{
+    font-family: STXinwei;
+    font-size: 20px;
+    color: rgb(100, 230, 255);
+    text-decoration:underline;
+}
+section p{
+    font-family:Calibri, 標楷體;
+    color: white;
+    font-size: 20px;
+    line-height: 30px;
+    margin-left: 2vw;
+    letter-spacing: 1px;
+}
+section ul{
+    list-style: none;
+    margin: 0 20px;
+}
+section li{
+    color: white;
+    font-family:Calibri, 標楷體 , bold;
+    font-size: 30px;
+    padding: 10px;
+    list-style-type:'#' ;
+}
+.year{
+    list-style-type:'#' ;
+}
+.year::marker{
+    color: rgb(100, 230, 255);
+}
+.main{
+    color: white;
+}
+.resume{
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px;
+    width: 500px;
+    font-family: sans-serif;
+    font-size: 20px;
+    letter-spacing: 1.2px;
+}
+.resume td{
+    background-color: #000;
+    padding: 3px 10px 3px 4px;
+    color: white;
+    font-size: 20px;
+    font-family:Calibri, 標楷體;
+    border: 2px solid slategrey;
+    border-width: 1px 0;
+}
+.resume .left{
+    width: 300px;
+    border: 0 2px ;
+}
+.right{
+    width: 200px;
+}
+.social{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.social img{
+    margin: 0 25px;
+    width: 80px;
+}
+.articlediv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.articlesec{
+    border: 2px solid rgb(100, 230, 255);
+    border-radius: 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+.articlesec h1{
+    margin-bottom: 0px;
+}
+.articlesec a{
+    text-decoration: none;
+}
+.articlesec p{
+    color: gray;
+    margin-bottom: 10px;
+}
+footer{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    margin: 0 15vw;
+}
+footer h1{
+    font-family: Arial;
+    font-size: 10px;
+    color: white;
+}
