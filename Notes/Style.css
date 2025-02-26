@@ -1,6 +1,5 @@
 body {
     background-color: #001;
-    color: white;
 }
 header{
     background-color: black;
@@ -28,12 +27,37 @@ header li{
     color: black;
     display: inline-block;
     text-align: centers;
-    margin:12px 30px;
+    margin:12px 20px;
     font-family: Agency FB;
 }
-header a{
+header h1 a{
+    font-family:STLiti;
+    font-size: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:20px;
+    letter-spacing: 2px;
+}
+header h1 a:hover{
+    font-family:STLiti;
+    font-size: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:20px;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+a{
     color: rgb(100, 230, 255);
     text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+    color: rgb(100, 230, 255);
 }
 section a{
     color: rgb(105, 98, 231);
@@ -81,10 +105,12 @@ section a:hover{
 pre{
     white-space: pre-wrap;
     border: 2px solid rgb(150,150,150);
-    background-color: rgb(60,60,60);
+    background-color: rgb(60,60,60);padding: 10px;
 }
 code{
     background-color: rgb(60,60,60);
+    font-size: 15px;
+    color: white;
 }
 section li{
     color: white;
@@ -108,8 +134,5 @@ footer{
 footer h1{
     font-family: Arial;
     font-size: 10px;
-    color: white;
-}
-code{
     color: white;
 }

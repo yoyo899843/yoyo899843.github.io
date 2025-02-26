@@ -1,7 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 body {
     background-color: #001;
 }
@@ -10,7 +6,7 @@ header{
     padding: 1px 0;
     margin: 0 15vw;
 }
-header h1{
+header h1{  
     font-family:STLiti;
     font-size: 40px;
     color: white;
@@ -33,6 +29,27 @@ header li{
     text-align: centers;
     margin:12px 20px;
     font-family: Agency FB;
+}
+header h1 a{
+    font-family:STLiti;
+    font-size: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:20px;
+    letter-spacing: 2px;
+}
+header h1 a:hover{
+    font-family:STLiti;
+    font-size: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:20px;
+    letter-spacing: 2px;
+    text-decoration: none;
 }
 a{
     color: rgb(100, 230, 255);
