@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yoyo899843's Blog</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="../index.html">yoyo899843's Blog</a></h1>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Resume.html">Resume</a></li>
+            <li><a href="../Notes.html">Notes</a></li>
+            <li><a href="../Article.html">Articles</a></li>
+            <li><a href="../Social.html">Social</a></li>
+        </ul>
+    </header>
+    <div class="sec">
+        <section>
+            <p><img src="ACECTF/ACECTF rank.png" alt="alt text"></p>
+<h2 id="super-secure-encryption">Super Secure Encryption</h2>
+<pre><code>from <span class="hljs-type">Crypto</span>.<span class="hljs-type">Util</span> <span class="hljs-keyword">import</span> Counter
+from binascii <span class="hljs-keyword">import</span> unhexlify
+
+known_plaintext = b'<span class="hljs-type">This</span> <span class="hljs-keyword">is</span> just a test message and can totally be ignored.'
+encrypted_msg = <span class="hljs-string">"d71f4a2fd1f9362c21ad33c7735251d0a671185a1b90ecba27713d35061
+67ca7052aa8bad60466b83041e6c02dbfee738c2a3"</span>
+encrypted_flag = <span class="hljs-string">"c234661fa5d63e627bef28823d052e95f65d59491580edfa192736
+9986859a3"</span>  # 在 msg.txt 中找到的第二行密文
+
+encrypted_msg_bytes = unhexlify(encrypted_msg)
+encrypted_flag_bytes = unhexlify(encrypted_flag)
+
+keystream = bytes([p ^ <span class="hljs-built_in">c</span> <span class="hljs-keyword">for</span> p, <span class="hljs-built_in">c</span> <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(known_plaintext, encrypted_msg_bytes)])
+
+decrypted_flag = bytes([<span class="hljs-built_in">c</span> ^ k <span class="hljs-keyword">for</span> <span class="hljs-built_in">c</span>, k <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(encrypted_flag_bytes, keystream)])
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"Recovered flag:"</span>, decrypted_flag.decode())
+</code></pre><pre><code>PS <span class="hljs-string">D:</span>\project&gt; &amp; <span class="hljs-string">"C:/Program Files/Python39/python.exe"</span> <span class="hljs-string">d:</span><span class="hljs-regexp">/project/</span>ACECTF<span class="hljs-regexp">/SuperSecureEncryption/</span>decrypt.py
+Recovered <span class="hljs-string">flag:</span> ACECTF{n07h2n6_15_53cur3_1n_7h15_w0rld}
+</code></pre><h2 id="sanity-check">Sanity Check</h2>
+<p>在DC輸入以下</p>
+<pre><code>/channelinfo channel: <span class="hljs-meta">#rules</span>
+</code></pre><h2 id="custom-encoding-scheme">Custom Encoding Scheme</h2>
+<pre><code>t1 = <span class="hljs-string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"</span>
+t = <span class="hljs-string">"I TOLD YOU THAT BASE64 DECODING IS NO GOOD"</span>
+output = [
+<span class="hljs-string">'SU'</span>,
+<span class="hljs-string">'IB'</span>,
+<span class="hljs-string">'VE'</span>,
+<span class="hljs-string">'Tz'</span>,
+<span class="hljs-string">'TE'</span>,
+<span class="hljs-string">'RF'</span>,
+<span class="hljs-string">'IE'</span>,
+<span class="hljs-string">'WT'</span>,
+<span class="hljs-string">'T1'</span>,
+<span class="hljs-string">'VU'</span>,
+<span class="hljs-string">'IE'</span>,
+<span class="hljs-string">'VG'</span>,
+<span class="hljs-string">'SH'</span>,
+<span class="hljs-string">'Qb'</span>,
+<span class="hljs-string">'VD'</span>,
+<span class="hljs-string">'IH'</span>,
+<span class="hljs-string">'Qm'</span>,
+<span class="hljs-string">'QY'</span>,
+<span class="hljs-string">'Uz'</span>,
+<span class="hljs-string">'RU'</span>,
+<span class="hljs-string">'Nj'</span>,
+<span class="hljs-string">'NH'</span>,
+<span class="hljs-string">'IF'</span>,
+<span class="hljs-string">'RP'</span>,
+<span class="hljs-string">'RX'</span>,
+<span class="hljs-string">'Q3'</span>,
+<span class="hljs-string">'Tz'</span>,
+<span class="hljs-string">'RE'</span>,
+<span class="hljs-string">'ST'</span>,
+<span class="hljs-string">'Tl'</span>,
+<span class="hljs-string">'R1'</span>,
+<span class="hljs-string">'IP'</span>,
+<span class="hljs-string">'SW'</span>,
+<span class="hljs-string">'Uz'</span>,
+<span class="hljs-string">'ID'</span>,
+<span class="hljs-string">'Tg'</span>,
+<span class="hljs-string">'Tz'</span>,
+<span class="hljs-string">'IA'</span>,
+<span class="hljs-string">'R2'</span>,
+<span class="hljs-string">'T8'</span>,
+<span class="hljs-string">'T3'</span>,
+<span class="hljs-string">'RN'</span>,
+]
+b = <span class="hljs-string">""</span>
+
+for x, y in enumerate(t):
+    z = f<span class="hljs-string">"{ord(y):08b}"</span>
+    if x &lt; <span class="hljs-number">42</span>:
+        a = z[:<span class="hljs-number">6</span>]
+        d = output[x][<span class="hljs-number">1</span>]
+        e = t1.index(output[x][<span class="hljs-number">0</span>])
+        g = t1.index(output[x][<span class="hljs-number">1</span>])
+        b += f<span class="hljs-string">"{g:06b}"</span>[<span class="hljs-number">-4</span>:]  # 將後 <span class="hljs-number">4</span> 位加入到 b 中
+    else:
+        pass
+
+print(<span class="hljs-string">"b:"</span>, b)
+</code></pre><pre><code>PS <span class="hljs-string">D:</span>\project&gt; &amp; <span class="hljs-string">"C:/Program Files/Python39/python.exe"</span> <span class="hljs-string">"d:/project/ACECTF/Custom Encoding Scheme/decrypt.py"</span><span class="hljs-string">
+b:</span> <span class="hljs-number">0100000101000011010001010100001101010100010001100111101100
+110111011010000011010000110111010111110111011100110100001101010
+10111110110001100110000001100000110110001111101</span>
+</code></pre><p><img src="ACECTF/image-1.png" alt="alt text"></p>
+<h2 id="flag-fetcher">Flag-Fetcher</h2>
+<pre><code><span class="hljs-keyword">GET</span> <span class="hljs-string">/a</span> HTTP/1.1
+
+<span class="http"><span class="hljs-attribute">Host</span>: 34.131.133.224
+
+<span class="http"><span class="hljs-attribute">Accept-Language</span>: en-US,en;q=0.9
+
+<span class="http"><span class="hljs-attribute">User-Agent</span>: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+
+<span class="http"><span class="hljs-attribute">Accept</span>: */*
+            
+<span class="http"><span class="hljs-attribute">Referer</span>: http://34.131.133.224/Flag-Fetcher/
+
+<span class="http"><span class="hljs-attribute">Accept-Encoding</span>: gzip, deflate, br
+
+<span class="armasm"><span class="hljs-symbol">Connection</span>: <span class="hljs-meta">keep</span>-alive</span></span></span></span></span></span></span>
+</code></pre><pre><code><span class="hljs-keyword">GET</span> <span class="hljs-string">/c</span> HTTP/1.1
+
+<span class="http"><span class="hljs-attribute">Host</span>: 34.131.133.224
+
+<span class="http"><span class="hljs-attribute">Accept-Language</span>: en-US,en;q=0.9
+
+<span class="http"><span class="hljs-attribute">User-Agent</span>: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+
+<span class="http"><span class="hljs-attribute">Accept</span>: */*
+
+<span class="http"><span class="hljs-attribute">Referer</span>: http://34.131.133.224/Flag-Fetcher/
+
+<span class="http"><span class="hljs-attribute">Accept-Encoding</span>: gzip, deflate, br
+
+<span class="armasm"><span class="hljs-symbol">Connection</span>: <span class="hljs-meta">keep</span>-alive</span></span></span></span></span></span></span>
+</code></pre><p>以此類推</p>
+<h2 id="cryptic-pixels">Cryptic Pixels</h2>
+<p>先binwalk圖片，取得一個加密zip</p>
+<pre><code>(yoyo@kali)-[/Downloads/_1<span class="hljs-selector-class">.png</span><span class="hljs-selector-class">.extracted</span>]
+-$ zip2john B8103<span class="hljs-selector-class">.zip</span> &gt; zip<span class="hljs-selector-class">.hash</span>
+ver <span class="hljs-number">1.0</span> efh <span class="hljs-number">5455</span> efh <span class="hljs-number">7875</span> B8103.zip/flag<span class="hljs-selector-class">.txt</span> PKZIP Encr: <span class="hljs-number">2</span>b chk, TS_chk, cmplen=<span class="hljs-number">38</span>, decmplen=<span class="hljs-number">26</span>, crc=<span class="hljs-number">49</span>DE1393 ts=<span class="hljs-number">1897</span> cs=<span class="hljs-number">1897</span> type=<span class="hljs-number">0</span>
+
+(yoyo@kali)-[/Downloads/_1<span class="hljs-selector-class">.png</span><span class="hljs-selector-class">.extracted</span>]
+-$ cat zip<span class="hljs-selector-class">.hash</span>
+<span class="hljs-number">88103</span>.zip/flag<span class="hljs-selector-class">.txt</span>:<span class="hljs-variable">$pkzip</span>$<span class="hljs-number">1</span>*<span class="hljs-number">2</span>*<span class="hljs-number">2</span>*<span class="hljs-number">0</span>*<span class="hljs-number">26</span>*<span class="hljs-number">1</span>a*<span class="hljs-number">49</span>de1393*<span class="hljs-number">0</span>*<span class="hljs-number">42</span>*<span class="hljs-number">0</span>*<span class="hljs-number">26</span>*<span class="hljs-number">1897</span>*aeb66777
+71adf0183e07d66cb64afc78fcde6601915eab09850c6c1198193b1677a163c248b0b0*$
+/pkzip$: flag<span class="hljs-selector-class">.txt</span> :B8103<span class="hljs-selector-class">.zip</span>::B8103. zip
+
+(yoyo@kali)-[/Downloads/_1<span class="hljs-selector-class">.png</span><span class="hljs-selector-class">.extracted</span>]
+-$ john zip<span class="hljs-selector-class">.hash</span> --wordlist=john<span class="hljs-selector-class">.lst</span>
+Using default <span class="hljs-selector-tag">input</span> encoding: UTF-<span class="hljs-number">8</span>
+Loaded <span class="hljs-number">1</span> password hash (PKZIP [<span class="hljs-number">32</span>/<span class="hljs-number">64</span>])
+will run <span class="hljs-number">8</span> OpenMP threads
+Press <span class="hljs-string">'q'</span> or Ctrl-C to abort, almost any other key <span class="hljs-keyword">for</span> status
+qwertyuiop (B8103.zip/flag.txt)
+<span class="hljs-number">1</span>g <span class="hljs-number">0</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> DONE (<span class="hljs-number">2025</span>-<span class="hljs-number">02</span>-<span class="hljs-number">28</span> <span class="hljs-number">14</span>:<span class="hljs-number">52</span>) <span class="hljs-number">50.00</span>g/s <span class="hljs-number">177300</span>p/s <span class="hljs-number">177300</span>c/s <span class="hljs-number">173300</span>C/s <span class="hljs-number">123</span>
+<span class="hljs-number">56</span>.<span class="hljs-selector-class">.sss</span>
+Use the <span class="hljs-string">"--show"</span> option to <span class="hljs-attribute">display</span> all of the cracked passwords reliably
+Session completed.
+</code></pre><p>FLAG.txt內容為</p>
+<pre><code>JLNLCO{q4q4_h0d<span class="hljs-symbol">'a3_5v4a7</span>}
+</code></pre><p>經過rot回復就是flag了</p>
+<p><img src="ACECTF/image.png" alt="alt text"></p>
+<h2 id="feeback-form">Feeback Form</h2>
+<h2 id="webrypto">Webrypto</h2>
+<pre><code><span class="hljs-link">https://chal.acectf.tech/Webrypto/?tom</span>[<span class="hljs-string"></span>]=a&amp;jerry[]=b
+</code></pre><p><img src="ACECTF/image-2.png" alt="alt text"></p>
+<h2 id="insanity-check">Insanity Check</h2>
+<p><img src="ACECTF/image-4.png" alt="alt text">
+<img src="ACECTF/image-3.png" alt="alt text"></p>
+            
+        </section>
+    </div>
+    <footer>
+        <h1>Copyright © Shin-You Shih All Right Reserved.</h1>
+    </footer>
+</body>
+</html>

@@ -81,14 +81,17 @@ section{
 section h1{
     color: rgb(100, 230, 255);
     font-size: 30px;
+    margin: 2px 0;
 }
 section h2{
     color: white;
+    margin: 2px 0;
 }
 section h3{
     color: white;
     font-size: 20px;
     font-family: Comic Sans MS;
+    margin: 2px 0;
 }
 section p{
     font-family:Calibri, 標楷體;
